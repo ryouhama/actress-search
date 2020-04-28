@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ base.tittle }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AV女優検索できるサイト">
+<meta name="keywords" content="AV,av,女優,検索">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="js/openclose.js"></script>
+<script src="js/fixmenu_pagetop.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="bgimg-shopping" class="bgimg">背景イメージ</div>
+
+<div id="main">
+
+<section>
+
+<h2>Shopping<span>ショッピング</span></h2>
+	{% if actress_list %}
+	{% if result_count %}
+	<h3>{{ result_count }}件ヒット</h3>
+	{% endif %}
+    {% for actress in actress_list %}
+
+	<div class="list transform1 {{ actress.id }}">
+		<a href="#">
+			<figure><img src="{{ actress.imageURL_large }}" alt="{{ actress.name }}"></figure>
+			<span>{{ actress.name }}</span>
+		</a>
+	</div>
+
+	{% endfor %}
+    {% endif %}
+
+</section>
+
+<section>
+<h2>SHOP CMS<span>ショップ向けCMS販売中</span></h2>
+<p>ネットショップ向けプログラムを販売中です。無料で試せる「試用版」もあります。<br>
+<a href="https://template-party.com/shop_program/"><img src="https://template-party.com/images/file/cms_shop/img01.jpg" alt=""></a></p>
+</section>
+
+</div>
+<!--/#main-->
+
+<div id="sub">
+
+<h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="SAMPLE SHOP"></a></h1>
+
+<!--PC用（801px以上端末）メニュー-->
+<nav id="menubar">
+<ul>
+<li class="menu1"><a href="index.html">Home<span>ホーム</span></a></li>
+<li class="menu2"><a href="about.html">About<span>当サイトについて</span></a></li>
+<li class="menu3 current"><a href="list.html">Shopping<span>ショッピング</span></a></li>
+<li class="menu4"><a href="access.html">Access<span>アクセス</span></a></li>
+<li class="menu5"><a href="contact.html">Contact<span>お問い合わせ</span></a></li>
+</ul>
+</nav>
+
+</div>
+<!--/#sub-->
+<!--
+
+
+<div id="sh-sub">
+
+<h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="SAMPLE SHOP"></a></h1>
+
+
+<nav id="menubar-s">
+<ul>
+<li class="menu1"><a href="index.html">Home<span>ホーム</span></a></li>
+<li class="menu2"><a href="about.html">About<span>当サイトについて</span></a></li>
+<li class="menu3 current"><a href="list.html">Shopping<span>ショッピング</span></a></li>
+<li class="menu4"><a href="access.html">Access<span>アクセス</span></a></li>
+<li class="menu5"><a href="contact.html">Contact<span>お問い合わせ</span></a></li>
+</ul>
+</nav>
+
+</div>
+-->
+
+<footer>
+<small>Copyright&copy; <a href="index.html">SAMPLE SHOP</a> All Rights Reserved.</small>
+<span class="pr"><a href="http://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+</footer>
+
+</div>
+<!--/#container-->
+
+<!--ページの上部に戻る「↑」ボタン-->
+<p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+<!--メニュー開閉ボタン-->
+<div id="menubar_hdr" class="close"></div>
+<!--メニューの開閉処理条件設定　800px以下-->
+<script>
+if (OCwindowWidth() <= 800) {
+	open_close("menubar_hdr", "menubar-s");
+}
+</script>
+
+<!--パララックス用ファイル読み込み-->
+<script src="js/jquery.inview.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+
+</body>
+</html>

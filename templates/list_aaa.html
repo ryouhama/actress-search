@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ base.tittle }}</title>
+</head>
+<body>
+    <div class="header-containar">
+        <a href="/webapp/top/"><image src="{{ base.logo_url }}"></image></a>
+    </div>
+
+    <div>{{ result_count }}件ヒット</div>
+    {% if actress_list %}
+    {% for actress in actress_list %}
+    <figure>
+        <div class="actress-wrap {{ actress.id }}">
+            {% if actress.imageURL_large %}
+            <image src="{{ actress.imageURL_large }}"></image>
+            {% endif %}
+            {% if actress.imageURL_small %}
+            <image src="{{ actress.imageURL_small }}"></image>
+            {% endif %}
+            <div>{{ actress.ruby }}</div>
+            <div>{{ actress.name }}</div>
+            <div class="actress-profile">
+                <div>バスト：{{ actress.bust }}</div>
+                <div>ウエスト：{{ actress.waist }}</div>
+                <div>ヒップ：{{ actress.hip }}</div>
+                <div>身長：{{ actress.height }}</div>
+            </div>
+            <ul>
+                <li><a href="{{ actress.listURL_digital }}" class="actress-list-page">{{ actress.name}}さんの作品一覧</a></li>
+                <li><a href="{{ actress.listURL_monthly }}" class="actress-list-page">listURL_monthly</a></li>
+                <li><a href="{{ actress.listURL_ppm }}" class="actress-list-page">listURL_ppm</a></li>
+                <li><a href="{{ actress.listURL_mono }}" class="actress-list-page">listURL_mono</a></li>
+            </ul>
+        </div>
+        <!--
+            {{ actress }}
+        -->
+    </figure>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>

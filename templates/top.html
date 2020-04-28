@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ base.tittle }}</title>
+    <!-- start css include -->
+    <link rel="stylesheet" href="{% static '/css/header.css' %}" />
+    <!-- end css include -->
+</head>
+<body>
+{% include './include/header.html' %}
+    <form action="/webapp/search/" method="post">
+        {% csrf_token %}
+        <div class="contents-box-inner">
+            <div class="pnl-ttl-wrap"><span class="pnl-ttl">かんたん検索</span></div>
+            <dl class="panel-tbl-wrap">
+                <dt>キーワード</dt>
+                <dd>
+                    <input type="text" class="pnl-point" name="kwd" size="30" maxlength="20">
+                </dd>
+            </dl>
+            <dl class="panel-tbl-wrap">
+                <dt>バスト</dt>
+                <dd>
+                    <input type="checkbox" name="bst" value="S">ちいさめ
+                    <input type="checkbox" name="bst" value="M">ふつう
+                    <input type="checkbox" name="bst" value="L">おおきめ
+                </dd>
+            </dl>
+            <dl class="panel-tbl-wrap">
+                <dt>体型</dt>
+                <dd>
+                    <input type="checkbox" name="bdy" value="S">やせ型
+                    <input type="checkbox" name="bdy" value="M">ふつう
+                    <input type="checkbox" name="bdy" value="L">ぽっちゃり
+                </dd>
+            </dl>
+            <input type="submit" value="検索する">
+            <input type="reset" value="リセット">
+        </div>
+        <input type="hidden" name="Easy-App" value="1">
+    </form>
+</body>
+</html>

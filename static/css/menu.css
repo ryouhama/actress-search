@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+
+
+/*全端末（PC・タブレット・スマホ）共通設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*メインメニューアニメーション設定
+---------------------------------------------------------------------------*/
+@keyframes logo {
+	0% {left: -110%;}
+	100% {left: 0%;}
+}
+@keyframes menu1 {
+	0% {left: -110%;}
+	100% {left: 0%;}
+}
+@keyframes menu2 {
+	0% {left: -110%;}
+	100% {left: 0%;}
+}
+@keyframes menu3 {
+	0% {left: -110%;}
+	100% {left: 0%;}
+}
+@keyframes menu4 {
+	0% {left: -110%;}
+	100% {left: 0%;}
+}
+@keyframes menu5 {
+	0% {left: -110%;}
+	100% {left: 0%;}
+}
+@keyframes menu-a {
+	0% {opacity: 0;left: 0%;}
+	80% {opacity: 0;left: 0%;}
+	100% {opacity: 1;left: 0%;}
+}
+@keyframes logo-a {
+	0% {opacity: 0;left: 0%;}
+	80% {opacity: 0;left: 0%;}
+	100% {opacity: 1;left: 0%;}
+}
+
+/*ロゴの設定
+---------------------------------------------------------------------------*/
+/*トップページのみで使うスタイル*/
+.home #sub .logo {
+	animation-name: logo-a;			/*上で設定しているキーフレーム（keyframes）の名前*/
+	animation-duration: 2s;			/*実行する時間。「s」は秒の事。*/
+	animation-iteration-count:1;	/*実行する回数。1回。*/
+	animation-delay: 1s;			/*アニメーションを遅れて開始させる。「s」は秒の事。*/
+	animation-fill-mode: both;		/*アニメーションの待機中は最初のフレームを、アニメーションの完了後は最後のフレームを維持する。*/
+}
+
+/*メニュー１個あたりの各設定
+---------------------------------------------------------------------------*/
+/*トップページのみで使うスタイル*/
+.home #menubar li.menu1,.home #menubar li.menu2,.home #menubar li.menu3,.home #menubar li.menu4,.home #menubar li.menu5 {
+	animation-duration: 0.5s;		/*実行する時間。「s」は秒の事。*/
+	animation-iteration-count:1;	/*実行する回数。1回。*/
+	animation-fill-mode: both;		/*アニメーションの待機中は最初のフレームを、アニメーションの完了後は最後のフレームを維持する。*/
+}
+/*全ページで使うスタイルの追加設定*/
+#menubar li.menu1,#menubar li.menu2,#menubar li.menu3,#menubar li.menu4,#menubar li.menu5 {
+	border-bottom: 1px solid #ccc;	/*下線の幅、線種、色*/
+	position: relative;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+/*メニュー１個あたりのリンク(a)タグへの設定
+---------------------------------------------------------------------------*/
+/*トップページのみで使うスタイル*/
+.home #menubar li a {
+	animation-name: menu-a;			/*上で設定しているキーフレーム（keyframes）の名前*/
+	animation-duration: 2s;			/*実行する時間。「s」は秒の事。*/
+	animation-iteration-count:1;	/*実行する回数。1回。*/
+	animation-delay: 1s;			/*アニメーションを遅れて開始させる。「s」は秒の事。*/
+	animation-fill-mode: both;		/*アニメーションの待機中は最初のフレームを、アニメーションの完了後は最後のフレームを維持する。*/
+}
+/*全ページで使うスタイルの追加設定*/
+#menubar li a {
+	display:  block;text-decoration: none;
+	font-family: 'Cinzel',"游明朝","Yu Mincho","游明朝体","YuMincho","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro";	/*フォントの指定*/
+	font-size: 18px;		/*文字サイズ*/
+	padding: 10px 0;		/*上下、左右の余白*/
+}
+/*マウスオン時*/
+#menubar li a:hover {
+	color: #aea863;	/*文字色*/
+}
+/*current（現在表示中メニュー）*/
+#menubar li.current a {
+	color: #aea863;	/*文字色*/
+}
+
+/*menu1への追加設定
+---------------------------------------------------------------------------*/
+#menubar li.menu1 {
+	animation-name: menu1;	/*上で設定しているキーフレーム（keyframes）の名前*/
+	animation-delay: 0.5s;	/*アニメーションを遅れて開始させる。「s」は秒の事。*/
+}
+/*menu2への追加設定
+---------------------------------------------------------------------------*/
+#menubar li.menu2 {
+	animation-name: menu2;	/*上で設定しているキーフレーム（keyframes）の名前*/
+	animation-delay: 0.7s;	/*アニメーションを遅れて開始させる。「s」は秒の事。*/
+}
+/*menu3への追加設定
+---------------------------------------------------------------------------*/
+#menubar li.menu3 {
+	animation-name: menu3;	/*上で設定しているキーフレーム（keyframes）の名前*/
+	animation-delay: 0.9s;	/*アニメーションを遅れて開始させる。「s」は秒の事。*/
+}
+/*menu4への追加設定
+---------------------------------------------------------------------------*/
+#menubar li.menu4 {
+	animation-name: menu4;	/*上で設定しているキーフレーム（keyframes）の名前*/
+	animation-delay: 1.1s;	/*アニメーションを遅れて開始させる。「s」は秒の事。*/
+}
+/*menu5への追加設定
+---------------------------------------------------------------------------*/
+#menubar li.menu5 {
+	animation-name: menu5;	/*上で設定しているキーフレーム（keyframes）の名前*/
+	animation-delay: 1.3s;	/*アニメーションを遅れて開始させる。「s」は秒の事。*/
+}
+
+/*説明表記（飾り文字）
+---------------------------------------------------------------------------*/
+#menubar li a span {
+	display: block;
+	font-size: 9px;	/*文字サイズ*/
+}
+
+/*スマホ用メニューを表示させない*/
+#menubar-s {display: none;}
+
+/*３本バーアイコンを表示させない*/
+#menubar_hdr {display: none;}
